@@ -1,0 +1,77 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1775999685
+icon.svg::CompressedTexture2D::2066057848488227977::1772123084::1772123101::1::::<><><>0<>0<>b35dff8d3cbbb80f04542a54864da45f<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://Assets/::1775302241
+::res://Assets/Game/::1775999685
+Pony.png::CompressedTexture2D::5535170233252716856::1775394921::1775395047::1::::<><><>0<>0<>0c60e0d7d64eafac1fd25a2d288bad75<>res://.godot/imported/Pony.png-c653a59750025be1d09c65d20619dc1a.ctex::
+дерево.png::CompressedTexture2D::3221933314747392068::1775395241::1775395259::1::::<><><>0<>0<>57af9ed52ac5bd8954e5c6e03a25a050<>res://.godot/imported/дерево.png-009849be67fb65365d869f969f974e00.ctex::
+пони вправо.png::CompressedTexture2D::7840075431099630485::1775999456::1775999685::1::::<><><>0<>0<>08ba9d0461fbaf49f0cd0a403f013c1c<>res://.godot/imported/пони вправо.png-df85e87f0fe16615fe943196aad03753.ctex::
+::res://Assets/Game/Horse/::1775372867
+HorseTexture.png::CompressedTexture2D::5494358670480232322::1775372853::1775372867::1::::<><><>0<>0<>47050c183a4b9c93b324b53e184ff964<>res://.godot/imported/HorseTexture.png-60b52d7f4aea95084bc8d84ace4b672d.ctex::
+::res://Assets/Game/Map/::1775368966
+::res://Assets/Game/Map/газон/::1775302241
+зелень.png::CompressedTexture2D::2789089124711921516::1772127760::1774175372::1::::<><><>0<>0<>24cb833697d14b902f9eef6731e42a7a<>res://.godot/imported/зелень.png-1547fe38f77b08967b213f1c9377f787.ctex::
+тайл трава2.png::CompressedTexture2D::2012357254913420219::1772126201::1774175372::1::::<><><>0<>0<>b927d053f074b8226f7b425fe1837fee<>res://.godot/imported/тайл трава2.png-ea2d65044cdc26dbc26f7e023f4b10ab.ctex::
+тайл трава3.png::CompressedTexture2D::4148874793771646486::1772125858::1774175372::1::::<><><>0<>0<>7b507afee56e16a57736ed83d79f0570<>res://.godot/imported/тайл трава3.png-a159c77067703b6e066524c915c2c5f6.ctex::
+тайл трава.png::CompressedTexture2D::9083722870890205425::1772125842::1774175372::1::::<><><>0<>0<>1f96da0e503891aafe46aa97e5253ce3<>res://.godot/imported/тайл трава.png-a41a7c957909705574b179e942497af1.ctex::
+тайлы трава4.png::CompressedTexture2D::6438943769145388015::1772125864::1774175372::1::::<><><>0<>0<>a317a4b5be3cac6ed8cb9d2977dc946a<>res://.godot/imported/тайлы трава4.png-d5d948ce3b9ddffee314cc02333c543c.ctex::
+тайлы трава5.png::CompressedTexture2D::2026536114901537950::1772125869::1774175372::1::::<><><>0<>0<>f98d6132fb4c75378fad6e1bd0d58639<>res://.godot/imported/тайлы трава5.png-d0aebd2de5cdd5708cbbacf9ba170d9b.ctex::
+::res://Assets/Game/Map/фрукты/::1775368977
+Fruit+.png::CompressedTexture2D::7790168632066381181::1775368976::1775368977::1::::<><><>0<>0<>90efa18b381293680031d6d833663887<>res://.godot/imported/Fruit+.png-80c9cf8638e20bb0d99ea8831bab2f95.ctex::
+::res://Assets/Game/деревья/::1775370824
+::res://Assets/Game/деревья/Forage Items/::1775369450
+::res://Assets/Game/деревья/Forage Items/Singles/::1775369450
+::res://Assets/Game/деревья/Forage Items/Singles/Forage Items/::1775369573
+01_Birch_Branch.png::CompressedTexture2D::3661674259555993008::1775369450::1775369573::1::::<><><>0<>0<>b25ff861d51721e684129ee5506b361c<>res://.godot/imported/01_Birch_Branch.png-e8c2da05139d1597dded7e58bf70f65a.ctex::
+02_Birch_Branch_Leaf.png::CompressedTexture2D::8848932131204463939::1775369450::1775369573::1::::<><><>0<>0<>bb68371a000d28ffb63166e3bf7370b3<>res://.godot/imported/02_Birch_Branch_Leaf.png-2e26b3b3ed269e55efd5fc32120ed21b.ctex::
+03_Birch_Log.png::CompressedTexture2D::5121240438254641597::1775369450::1775369573::1::::<><><>0<>0<>b63f7540ad6e8d2d0daa0deec9025e4a<>res://.godot/imported/03_Birch_Log.png-496d995d3caaf19c1e29d9ff2d38afaa.ctex::
+04_Birch_Firewood.png::CompressedTexture2D::5564421154634232316::1775369450::1775369573::1::::<><><>0<>0<>9b08d08d48e4dbbb500a67b6a296edfa<>res://.godot/imported/04_Birch_Firewood.png-4be874432855bdd35c393f851ba30f21.ctex::
+05_Birch_Seed.png::CompressedTexture2D::93200470681714083::1775369450::1775369573::1::::<><><>0<>0<>4721f822bade6bd776ddf994ab1796dd<>res://.godot/imported/05_Birch_Seed.png-f781b0f0a5f5cc707caf96ad1d0ba91c.ctex::
+06_Oak_Branch.png::CompressedTexture2D::974233466378684384::1775369450::1775369573::1::::<><><>0<>0<>726a2da56ab275e545ff51d2b2d14bba<>res://.godot/imported/06_Oak_Branch.png-27dd85ea543116717f36ec125ed55a19.ctex::
+07_Oak_Branch_Leaf.png::CompressedTexture2D::960797795106868325::1775369450::1775369573::1::::<><><>0<>0<>c592a19f45037938d8e0e011a5d06833<>res://.godot/imported/07_Oak_Branch_Leaf.png-932aef857e689d79c7c0d41d56a43c19.ctex::
+08_Oak_Log.png::CompressedTexture2D::7798227787454219374::1775369450::1775369573::1::::<><><>0<>0<>8e4b5766e8f552bbba9dcf3d41105d6e<>res://.godot/imported/08_Oak_Log.png-b1f3a5109ae6a39d3a8fe1a23189692a.ctex::
+09_Oak_Firewood.png::CompressedTexture2D::2212195362073412805::1775369450::1775369573::1::::<><><>0<>0<>60614a75ff871778aada893ac051e6cc<>res://.godot/imported/09_Oak_Firewood.png-38a680e796d367048010a13733959bb5.ctex::
+10_Oak_Seed.png::CompressedTexture2D::2521970863070521411::1775369450::1775369573::1::::<><><>0<>0<>4cb4d8df6b3fc571baf101bafa0eb7be<>res://.godot/imported/10_Oak_Seed.png-13c48f3538c632bf3e36571ee48b224a.ctex::
+::res://Assets/Game/деревья/Forage Items/Spritesheets/::1775369573
+NatureLoot.png::CompressedTexture2D::5511834209470502688::1775369450::1775369573::1::::<><><>0<>0<>fab5e935762970fce037e344ebc30592<>res://.godot/imported/NatureLoot.png-8a0366aeaaec6590260fdbfdb1398a78.ctex::
+::res://Assets/Game/деревья/fruit/::1775370836
+Fruit+.png::CompressedTexture2D::5311758101599228659::1775370836::1775370836::1::::<><><>0<>0<>6cd2b153f9af85bbe5c3abc15ad39b31<>res://.godot/imported/Fruit+.png-4d73d4fe1dde5b4017d368c7d2bbce66.ctex::
+::res://Assets/Game/деревья/NoShadow/::1775369450
+::res://Assets/Game/деревья/NoShadow/Black Outline/::1775369569
+Premium_Trees_Black_Outline.png::CompressedTexture2D::7933024669617166376::1627737965::1775369569::1::::<><><>0<>0<>16f8c5fd6dee13d528400139586afa0a<>res://.godot/imported/Premium_Trees_Black_Outline.png-a2b2498760804d8eed731f07929cab8c.ctex::
+::res://Assets/Game/деревья/NoShadow/No outline/::1775369569
+Premium_TreesUpdated_No_Outline.png::CompressedTexture2D::755527701753106431::1627737952::1775369569::1::::<><><>0<>0<>2705751f667f4a6a8a1ff0bd92fa79e8<>res://.godot/imported/Premium_TreesUpdated_No_Outline.png-68bf71d67aca2509d818aa38d5c07d55.ctex::
+::res://Assets/Game/деревья/Shadow/::1775369450
+::res://Assets/Game/деревья/Shadow/Black Outline/::1775369563
+Premium_Trees_Black_Outline.png::CompressedTexture2D::5518633030545596020::1627737934::1775369563::1::::<><><>0<>0<>6c5175c9d57ba394ace19e5e6ae7e9a3<>res://.godot/imported/Premium_Trees_Black_Outline.png-511dea9831f4956d71e54f8d0d5834ee.ctex::
+::res://Assets/Game/деревья/Shadow/No Outline/::1775369563
+Premium_TreesUpdated_No_Outline.png::CompressedTexture2D::8960631011050116867::1627737872::1775369563::1::::<><><>0<>0<>593219b46b67e6a5350ba1a265d6b7ca<>res://.godot/imported/Premium_TreesUpdated_No_Outline.png-951436e67f76b841c0a63da738577f8a.ctex::
+::res://Assets/Game/Персы пнг/::1775999709
+ГГ-поворот влево.png::CompressedTexture2D::6201762388610494190::1773224215::1774175372::1::::<><><>0<>0<>4474f0396bf4f7cea4d8e23e26a70b18<>res://.godot/imported/ГГ-поворот влево.png-38d1cdc00adf005438e5d38efbc49110.ctex::
+ГГ-поворот вправо.png::CompressedTexture2D::7710344036554988076::1773224215::1774175372::1::::<><><>0<>0<>e07d99c893d9be70eaa287f03f39b1fa<>res://.godot/imported/ГГ-поворот вправо.png-2925a9c35af7fc11c8bd9f881d2b4d88.ctex::
+ГГ-походка-вправо.png::CompressedTexture2D::8883396942903855724::1773224215::1774175372::1::::<><><>0<>0<>fa608411acfd4420d194351a45c734ce<>res://.godot/imported/ГГ-походка-вправо.png-12833c1219d33658f8786bd7ea44dbe7.ctex::
+ГГ-походка.png::CompressedTexture2D::7841785266517349643::1773224215::1774175372::1::::<><><>0<>0<>8c434ab803b32451400c1ab04f7d4c2b<>res://.godot/imported/ГГ-походка.png-e5406c258e40ef90d90957c390276220.ctex::
+пони влево.png::CompressedTexture2D::5281357740079083004::1775999709::1775999709::1::::<><><>0<>0<>c64e60277e342feed9a4a3419d9ea9ff<>res://.godot/imported/пони влево.png-f4946d481d94bb7ad8935588d69dd1bc.ctex::
+ходьба впепед.png::CompressedTexture2D::9195566998240071404::1773224215::1774175372::1::::<><><>0<>0<>35bcbb168c76ad78acced5ea17ea2d8f<>res://.godot/imported/ходьба впепед.png-395dbc8ed28e91a5cfd25db9fda2929a.ctex::
+ходьба назад.png::CompressedTexture2D::8786476858631039388::1773224215::1774175372::1::::<><><>0<>0<>6ea5c9464bb820e38a2c90be7828b056<>res://.godot/imported/ходьба назад.png-977ba7a84db90e75748cf0a6dc798389.ctex::
+::res://Assets/png static/::1775302241
+Дом.png::CompressedTexture2D::6481881201877282474::1774208438::1774208445::1::::<><><>0<>0<>b4a3928259aedee47301b200cde1a66e<>res://.godot/imported/Дом.png-2cd82322c193a41119f4f9595b3aeff5.ctex::
+Забор.png::CompressedTexture2D::6506488686010078317::1774300987::1774300987::1::::<><><>0<>0<>918fe0b0c6bdbf2119f624ef5f7ecbc1<>res://.godot/imported/Забор.png-786cb7605162cfe2f9f54a53d5ae33d9.ctex::
+::res://Scenes/::1775371087
+::res://Scenes/Components/::1775999685
+pony.gd::GDScript::3622464830489613061::1775399389::0::1::::<>Node2D<><>0<>0<><>::
+pony.tscn::PackedScene::4719220047358860134::1775399389::0::1::::<><><>0<>0<><>::uid://bru0p4jxlxqb2::::res://Scenes/Components/pony.gd<>uid://ck4jpep8huiiy::::res://Assets/Game/Pony.png
+tree.gd::GDScript::2397188024014852438::1775370641::0::1::::<>Node2D<><>0<>0<><>::
+tree.tscn::PackedScene::6754964177765723172::1775935378::0::1::::<><><>0<>0<><>::uid://bafhlpawopdfi::::res://Scenes/Components/tree.gd<>uid://bl5y1hh7lm25m::::res://Assets/Game/дерево.png<>uid://chxb46evwuna6::::res://Assets/Game/деревья/fruit/Fruit+.png
+::res://Scenes/Field/::1775935399
+scene_1.tscn::PackedScene::4429594599698675817::1775935399::0::1::::<><><>0<>0<><>::uid://cb00sslemlrrw::::res://TileSets/game_tile_set.tres<>uid://bsx5nxs57sw3c::::res://Scenes/Перс/Girl/девочка.tscn<>uid://c3ifjjxy6qbhc::::res://Scenes/Components/tree.tscn<>uid://b8ia4nt520g7w::::res://Scenes/Components/pony.tscn
+::res://Scenes/Перс/::1775302242
+::res://Scenes/Перс/Girl/::1775397677
+move.gd::GDScript::993446796654368073::1774792476::0::1::::<>CharacterBody2D<><>0<>0<><>::
+девочка.tscn::PackedScene::3699146519874908514::1775397677::0::1::::<><><>0<>0<><>::uid://dytgiqy6orp4o::::res://Assets/Game/Персы пнг/ГГ-походка-вправо.png<>uid://ofh6nxbi06xx::::res://Scenes/Перс/Girl/move.gd<>uid://d4anv6t8eaii3::::res://Assets/Game/Персы пнг/ходьба впепед.png<>uid://dxgh8wurqveyu::::res://Assets/Game/Персы пнг/ходьба назад.png<>uid://djyvb7vq54wi2::::res://Assets/Game/Персы пнг/ГГ-походка.png<>uid://tli2nbrlbjpa::::res://Scripts/state_machine/node_state_machine.gd
+::res://Scripts/::1775302242
+::res://Scripts/state_machine/::1775302242
+node_state.gd::GDScript::1210186962170620761::1774172079::0::1::::NodeState<>Node<><>0<>0<><>::
+node_state_machine.gd::GDScript::1356830821930345146::1774172103::0::1::::NodeStateMachine<>Node<><>0<>0<><>::
+::res://TileSets/::1775929852
+game_tile_set.tres::TileSet::4896190686596560116::1775929851::0::1::::<><><>0<>0<><>::uid://d2ohual1tejhp::::res://Assets/Game/Map/газон/тайл трава.png<>uid://bf0b5jkag1nls::::res://Assets/Game/Map/газон/зелень.png<>uid://3w2h24dxi188::::res://Assets/Game/Map/газон/тайл трава2.png<>uid://cyx16hi8rtvgf::::res://Assets/png static/Забор.png<>uid://b0d0mkecl6yj3::::res://Assets/Game/Map/газон/тайл трава3.png<>uid://cx0cp0nd2gfkh::::res://Assets/Game/Map/газон/тайлы трава4.png<>uid://cyl4vvwj2jj8m::::res://Assets/png static/Дом.png
