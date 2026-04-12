@@ -284,8 +284,9 @@ format = 2
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_agspb")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=657820343]
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=374013447]
+freeze = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1443194076]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1443194076]
 position = Vector2(3, 64)
 shape = SubResource("RectangleShape2D_jlx0s")

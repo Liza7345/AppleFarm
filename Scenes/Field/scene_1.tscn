@@ -33,5 +33,5 @@ position = Vector2(830, 305)
 [node name="Tree4" parent="." unique_id=326906330 groups=["trees"] instance=ExtResource("3_8m18q")]
 position = Vector2(1014, 297)
 
-[node name="Node2D" parent="." unique_id=1759426126 instance=ExtResource("4_ck0p7")]
+[node name="Pony" parent="." unique_id=1759426126 instance=ExtResource("4_ck0p7")]
 position = Vector2(734, 345)
