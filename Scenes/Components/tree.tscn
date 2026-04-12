@@ -263,7 +263,7 @@ sources/0 = SubResource("TileSetAtlasSource_d2g23")
 size = Vector2(128, 152)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jlx0s"]
-size = Vector2(42, 16)
+size = Vector2(40, 128)
 
 [node name="Tree" type="Node2D" unique_id=1838805258]
 position = Vector2(8, 0)
@@ -284,8 +284,9 @@ format = 2
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_agspb")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=657820343]
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=21402416]
+freeze = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1443194076]
-position = Vector2(3, 64)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1443194076]
+position = Vector2(4, 8)
 shape = SubResource("RectangleShape2D_jlx0s")
