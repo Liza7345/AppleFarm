@@ -175,14 +175,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl60t"]
+size = Vector2(48, 56)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_doed1"]
-size = Vector2(80, 64)
+size = Vector2(80, 72)
 
 [sub_resource type="LabelSettings" id="LabelSettings_33158"]
 font_size = 8
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xhc4"]
-size = Vector2(48, 56)
 
 [node name="Node2D" type="Node2D" unique_id=1759426126]
 script = ExtResource("1_33158")
@@ -191,9 +191,17 @@ script = ExtResource("1_33158")
 sprite_frames = SubResource("SpriteFrames_xsox0")
 animation = &"idle_front"
 
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1582575455]
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=447993869]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_dl60t")
+
 [node name="Area2D" type="Area2D" parent="." unique_id=1600842517]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=547492395]
+position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_doed1")
 
 [node name="Label" type="Label" parent="." unique_id=803360688]
@@ -203,10 +211,3 @@ offset_right = 34.0
 offset_bottom = -36.0
 text = "выбрать дерево"
 label_settings = SubResource("LabelSettings_33158")
-
-[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1036265086]
-freeze = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1960410932]
-position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_6xhc4")

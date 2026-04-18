@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bsx5nxs57sw3c" path="res://Scenes/Перс/Girl/девочка.tscn" id="2_ivs6x"]
 [ext_resource type="PackedScene" uid="uid://c3ifjjxy6qbhc" path="res://Scenes/Components/tree.tscn" id="3_8m18q"]
 [ext_resource type="PackedScene" uid="uid://b8ia4nt520g7w" path="res://Scenes/Components/pony.tscn" id="4_ck0p7"]
+[ext_resource type="Script" uid="uid://fyuj7tdu2dtw" path="res://Scenes/Field/signal_bus.gd" id="5_y3erl"]
 
 [node name="Scene 1" type="Node2D" unique_id=145392554]
 position = Vector2(-6, 7)
@@ -21,17 +22,25 @@ tile_set = ExtResource("1_uxt1w")
 [node name="Девочка" parent="." unique_id=174728330 instance=ExtResource("2_ivs6x")]
 position = Vector2(344, 424)
 
-[node name="Tree" parent="." unique_id=1838805258 groups=["trees"] instance=ExtResource("3_8m18q")]
-position = Vector2(822, 129)
+[node name="Tree" parent="." unique_id=1838805258 node_paths=PackedStringArray("signal_bus") groups=["trees"] instance=ExtResource("3_8m18q")]
+position = Vector2(702, 153)
+signal_bus = NodePath("../SignalBus")
 
-[node name="Tree2" parent="." unique_id=1772709192 groups=["trees"] instance=ExtResource("3_8m18q")]
+[node name="Tree2" parent="." unique_id=1772709192 node_paths=PackedStringArray("signal_bus") groups=["trees"] instance=ExtResource("3_8m18q")]
 position = Vector2(974, 129)
+signal_bus = NodePath("../SignalBus")
 
-[node name="Tree3" parent="." unique_id=1708440672 groups=["trees"] instance=ExtResource("3_8m18q")]
-position = Vector2(830, 305)
+[node name="Tree3" parent="." unique_id=1708440672 node_paths=PackedStringArray("signal_bus") groups=["trees"] instance=ExtResource("3_8m18q")]
+position = Vector2(718, 481)
+signal_bus = NodePath("../SignalBus")
 
-[node name="Tree4" parent="." unique_id=326906330 groups=["trees"] instance=ExtResource("3_8m18q")]
-position = Vector2(1014, 297)
+[node name="Tree4" parent="." unique_id=326906330 node_paths=PackedStringArray("signal_bus") groups=["trees"] instance=ExtResource("3_8m18q")]
+position = Vector2(934, 297)
+signal_bus = NodePath("../SignalBus")
 
-[node name="Pony" parent="." unique_id=1759426126 instance=ExtResource("4_ck0p7")]
+[node name="Pony" parent="." unique_id=1759426126 node_paths=PackedStringArray("signal_bus") instance=ExtResource("4_ck0p7")]
 position = Vector2(734, 345)
+signal_bus = NodePath("../SignalBus")
+
+[node name="SignalBus" type="Node" parent="." unique_id=505979432]
+script = ExtResource("5_y3erl")
