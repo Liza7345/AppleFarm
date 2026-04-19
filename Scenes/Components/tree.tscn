@@ -263,7 +263,7 @@ sources/0 = SubResource("TileSetAtlasSource_d2g23")
 size = Vector2(128, 152)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jlx0s"]
-size = Vector2(40, 40)
+size = Vector2(40, 16)
 
 [node name="Tree" type="Node2D" unique_id=1838805258 node_paths=PackedStringArray("physics_collision")]
 position = Vector2(8, 0)
@@ -289,5 +289,5 @@ shape = SubResource("RectangleShape2D_agspb")
 freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=825983535]
-position = Vector2(4, 52)
+position = Vector2(4, 64)
 shape = SubResource("RectangleShape2D_jlx0s")

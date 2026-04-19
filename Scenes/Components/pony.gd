@@ -125,4 +125,3 @@ func update_movement_animation(direction):
 	else:
 		animated_sprite.play("idle_right")
 		animated_sprite.scale.x = -abs(animated_sprite.scale.x)
-	

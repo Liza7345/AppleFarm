@@ -1,4 +1,3 @@
-res://Scenes/Components/pony.tscn
-res://TileSets/game_tile_set.tres
 res://Scenes/Field/scene_1.tscn
-res://Scenes/Components/tree.tscn
+res://TileSets/game_tile_set.tres
+res://Scenes/Field/cursor_manager.gd

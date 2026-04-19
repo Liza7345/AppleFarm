@@ -15,6 +15,15 @@ run/main_scene="uid://b4dy1m6njsag4"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SignalBus="*uid://fyuj7tdu2dtw"
+CursorManager="*uid://ct5ubl5vdn5xn"
+
+[display]
+
+mouse_cursor/custom_image="uid://it5nqgk8yjj2"
+
 [input]
 
 WalkDown={

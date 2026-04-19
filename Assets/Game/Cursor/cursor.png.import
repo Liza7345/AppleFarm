@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckjrjw7vcswn7"
-path="res://.godot/imported/HorseTexture.png-60b52d7f4aea95084bc8d84ace4b672d.ctex"
+uid="uid://it5nqgk8yjj2"
+path="res://.godot/imported/cursor.png-9064c209d21574feaff49a2ef930f3a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Game/Horse/HorseTexture.png"
-dest_files=["res://.godot/imported/HorseTexture.png-60b52d7f4aea95084bc8d84ace4b672d.ctex"]
+source_file="res://Assets/Game/Cursor/cursor.png"
+dest_files=["res://.godot/imported/cursor.png-9064c209d21574feaff49a2ef930f3a6.ctex"]
 
 [params]
 
