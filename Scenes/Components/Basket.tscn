@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://hcgcys36s70p"]
+
+[ext_resource type="Script" uid="uid://bj3i8l0mbifm0" path="res://Scenes/Components/basket.gd" id="1_8h58k"]
+[ext_resource type="Texture2D" uid="uid://xi05dscsq68w" path="res://Assets/png static/Корзинка.png" id="2_rl8ls"]
+[ext_resource type="Texture2D" uid="uid://bcp7hruh1lfiv" path="res://Assets/png static/Корзинка с яблоками.png" id="3_2x15o"]
+
+[node name="Basket" type="Node2D" unique_id=1248266407 node_paths=PackedStringArray("empty_basket", "basket_with_apples")]
+script = ExtResource("1_8h58k")
+empty_basket = NodePath("Basket_empty")
+basket_with_apples = NodePath("WithApplesSprite")
+
+[node name="Basket_empty" type="Sprite2D" parent="." unique_id=1938832736]
+texture = ExtResource("2_rl8ls")
+
+[node name="WithApplesSprite" type="Sprite2D" parent="." unique_id=58662455]
+texture = ExtResource("3_2x15o")

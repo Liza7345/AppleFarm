@@ -1,3 +1,12 @@
 res://Scenes/Field/scene_1.tscn
 res://TileSets/game_tile_set.tres
 res://Scenes/Field/cursor_manager.gd
+res://Scenes/Components/pony.tscn
+res://Scenes/Components/pony.gd
+res://Scenes/Components/Basket.tscn
+res://Scenes/Components/basket.gd
+res://Scenes/Field/signal_bus.gd
+res://Scenes/Components/tree.tscn
+res://Scenes/Components/Apple.tscn
+res://Scenes/Components/apple.gd
+res://Scenes/Components/tree.gd

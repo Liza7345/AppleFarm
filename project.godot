@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SignalBus="*uid://fyuj7tdu2dtw"
 CursorManager="*uid://ct5ubl5vdn5xn"
+Apple="*uid://dph03gu8hdhbr"
 
 [display]
 

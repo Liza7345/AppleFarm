@@ -10,6 +10,7 @@ extends Node2D
 var player_in_range: bool = false
 var target_tree: Node = null
 var is_moving_to_tree : bool = true
+var is_hitting_tree : bool = false
 var current_point : Vector2 = Vector2.ZERO
 var direction: Vector2 = Vector2.ZERO
 
@@ -18,9 +19,21 @@ func _ready() -> void:
 	area.body_entered.connect(_on_body_entered)
 	area.body_exited.connect(_on_body_exited)
 	
+	animated_sprite.animation_finished.connect(_on_animation_finished)
 	signal_bus.current_tree_selected.connect(_on_current_tree_selected)
 	lable_node.visible = false
 
+func _on_animation_finished(): 
+	print ("_on_animation_finished вызвалась")
+	if animated_sprite.animation == "idle_hit":
+		print ("Анимация закончилась")
+		idle()
+		signal_bus.apples_fall.emit()
+
+func idle():
+	is_hitting_tree = false
+	is_moving_to_tree = false
+	
 func _on_current_tree_selected(shape : CollisionShape2D):
 	is_moving_to_tree = true
 	current_point = get_closest_point_on_rectangle(shape)
@@ -77,6 +90,10 @@ func _physics_process(delta):
 		move_towards_tree(delta)
 		# Обновляем анимацию в зависимости от направления
 		update_movement_animation(direction)
+	elif is_hitting_tree:
+		animated_sprite.play("idle_hit")
+	else:
+		animated_sprite.play("idle")
 		
 func move_towards_tree(delta):
 	var distance = global_position.distance_to(current_point)
@@ -84,24 +101,22 @@ func move_towards_tree(delta):
 	global_position += direction * move_speed * delta
 	# Если достигли дерева (близко)
 	if distance < 20:
-		is_moving_to_tree = false
 		on_reached_tree()
 		
 func on_reached_tree():
+	is_moving_to_tree = false
 	print("🦄 Пони достигла дерева!")
 	
 	# Поворачиваем пони к дереву (опционально)
 	face_tree()
 	
 	print("пони развернулась")
-	# Запускаем анимацию удара
-	animated_sprite.play("idle_hit")
-	
-	# Ждём окончания анимации
-	await animated_sprite.animation_finished
-	
+	# Запускаем анимацию ударa
+	signal_bus.show_basket.emit(current_point)
 	# Собираем яблоки
 	collect_apples()
+	
+	hit_tree()
 	
 func face_tree():
 	# Поворачиваем пони лицом к дереву
@@ -125,3 +140,7 @@ func update_movement_animation(direction):
 	else:
 		animated_sprite.play("idle_right")
 		animated_sprite.scale.x = -abs(animated_sprite.scale.x)
+		
+func hit_tree():
+	is_moving_to_tree = false
+	is_hitting_tree = true
