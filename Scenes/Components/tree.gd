@@ -2,6 +2,7 @@ extends Node2D
 
 @export var signal_bus : SignalBus = null
 @export var physics_collision: CollisionShape2D = null
+<<<<<<< HEAD
 @export var apples : Array[AppleNode] = []
 @export var root : Node2D = null
 @export var apples_fall_trigger : ApplesFallTrigger = null
@@ -14,10 +15,21 @@ var is_grown: bool = false
 var _is_regrowing: bool = false
 var _regrow_timers: Array[SceneTreeTimer] = []
 
+=======
+@export var apples : Array[Apple] = []
+@onready var animated_sprite = $AnimatedSprite2D
+@export var root : Node2D = null
+@onready var area = $Area2D
+
+var selection_mode : bool = false
+ 
+# Called when the node enters the scene tree for the first time.
+>>>>>>> be79633d48fc7a978e2c8305c747e24e9195b433
 func _ready() -> void:
 	area.input_event.connect(_on_click)
 	signal_bus.selection_mode_entered.connect(_on_selection_mode_entered)
 	signal_bus.selection_mode_exited.connect(_on_selection_mode_exited)
+<<<<<<< HEAD
 	signal_bus.game_started.connect(_on_game_started)
 	signal_bus.gather_apple.connect(_on_gather_apple)
 
@@ -34,7 +46,16 @@ func _ready() -> void:
 
 func _on_game_started(_goal: int) -> void:
 	animated_sprite.play("growing")
+=======
+	for apple in apples:
+		apple.set_signal_bus(signal_bus)
+>>>>>>> be79633d48fc7a978e2c8305c747e24e9195b433
 
+func _on_selection_mode_entered():
+	selection_mode = true
+	
+func _on_selection_mode_exited():
+	selection_mode = false
 
 func _setup_growing_animation() -> void:
 	var texture = load("res://Assets/Game/деревья/derevo_bez_yablok.png")
@@ -82,6 +103,7 @@ func _on_selection_mode_exited():
 
 func _process(_delta: float) -> void:
 	pass
+<<<<<<< HEAD
 
 
 func _on_click(viewport, event, shape_idx):
@@ -129,3 +151,14 @@ func _check_all_regrown() -> void:
 func _disable_area() -> void:
 	area.set_deferred("monitoring", false)
 	area.set_deferred("monitorable", false)
+=======
+	
+	
+func _physic_process(delta: float) -> void:
+	animated_sprite.play("idle")
+	
+func _on_click(viewport, event, shape_idx):
+	if selection_mode and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		signal_bus.current_tree_selected.emit(physics_collision)
+		signal_bus.current_tree_selected_root.emit(root)
+>>>>>>> be79633d48fc7a978e2c8305c747e24e9195b433

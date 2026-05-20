@@ -2,12 +2,19 @@
 
 [ext_resource type="Script" uid="uid://bru0p4jxlxqb2" path="res://Scenes/Components/pony.gd" id="1_33158"]
 [ext_resource type="Texture2D" uid="uid://ck4jpep8huiiy" path="res://Assets/Game/Персы пнг/Pony.png" id="1_doed1"]
+[ext_resource type="Texture2D" uid="uid://b5vfynbsocd5a" path="res://Assets/Game/Персы пнг/idle_pony.png" id="2_rs2mp"]
 [ext_resource type="Texture2D" uid="uid://csrrui03elokr" path="res://Assets/Game/Персы пнг/пони влево.png" id="3_dl60t"]
 [ext_resource type="Texture2D" uid="uid://cpliqb8sy15h6" path="res://Assets/Game/Персы пнг/пони вправо.png" id="4_dl60t"]
 
+<<<<<<< HEAD
 [sub_resource type="AtlasTexture" id="AtlasTexture_dl60t"]
 atlas = ExtResource("4_dl60t")
 region = Rect2(370, 0, 74, 64)
+=======
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xhc4"]
+atlas = ExtResource("2_rs2mp")
+region = Rect2(0, 0, 74, 64)
+>>>>>>> be79633d48fc7a978e2c8305c747e24e9195b433
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_33158"]
 atlas = ExtResource("1_doed1")
@@ -97,7 +104,11 @@ region = Rect2(370, 0, 74, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
+<<<<<<< HEAD
 "texture": SubResource("AtlasTexture_dl60t")
+=======
+"texture": SubResource("AtlasTexture_6xhc4")
+>>>>>>> be79633d48fc7a978e2c8305c747e24e9195b433
 }],
 "loop": true,
 "name": &"idle",
@@ -201,11 +212,17 @@ script = ExtResource("1_33158")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=5055160]
 sprite_frames = SubResource("SpriteFrames_xsox0")
+<<<<<<< HEAD
 animation = &"idle_hit"
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1582575455]
 collision_layer = 2
 collision_mask = 15
+=======
+animation = &"idle"
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1582575455]
+>>>>>>> be79633d48fc7a978e2c8305c747e24e9195b433
 freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=447993869]

@@ -18,9 +18,18 @@ config/icon="res://icon.svg"
 [autoload]
 
 SignalBus="*uid://fyuj7tdu2dtw"
+<<<<<<< HEAD
 Apple="*uid://dph03gu8hdhbr"
 ApplesFallTrigger="*uid://orxioh3vqlee"
 CursorManager="*uid://ct5ubl5vdn5xn"
+=======
+CursorManager="*uid://ct5ubl5vdn5xn"
+Apple="*uid://dph03gu8hdhbr"
+
+[display]
+
+mouse_cursor/custom_image="uid://it5nqgk8yjj2"
+>>>>>>> be79633d48fc7a978e2c8305c747e24e9195b433
 
 [input]
 
