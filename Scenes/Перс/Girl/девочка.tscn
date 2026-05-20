@@ -170,17 +170,18 @@ animations = [{
 size = Vector2(32, 32)
 
 [node name="Девочка" type="CharacterBody2D" unique_id=174728330]
+z_index = 1
+collision_mask = 31
 script = ExtResource("1_dyfhu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1000637056]
-position = Vector2(96, 64)
 sprite_frames = SubResource("SpriteFrames_tvhrg")
 animation = &"idle_stay"
 autoplay = "idle_stay"
 frame_progress = 0.7978435
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1998607833]
-position = Vector2(96, 88)
+position = Vector2(0, 24)
 shape = SubResource("RectangleShape2D_d5h8o")
 
 [node name="State_machine" type="Node" parent="." unique_id=980556211]

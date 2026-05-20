@@ -1,10 +1,19 @@
 extends CharacterBody2D
 
 @export var speed: float = 150.0
+@export var signal_bus: SignalBus = null
 @onready var animated_sprite = $AnimatedSprite2D
 
 var direction = Vector2.ZERO
 var last_direction = Vector2.DOWN
+
+func _ready() -> void:
+	set_physics_process(false)
+	if signal_bus:
+		signal_bus.game_started.connect(_on_game_started)
+
+func _on_game_started(_goal: int) -> void:
+	set_physics_process(true)
 
 func _physics_process(delta):
 	 # Получаем нажатия клавиш

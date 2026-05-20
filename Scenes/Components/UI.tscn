@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://daqgubnggle1p"]
+
+[ext_resource type="Script" uid="uid://b0v4glu4pjfwv" path="res://Scenes/Components/ui.gd" id="1_2f1pi"]
+[ext_resource type="Texture2D" uid="uid://chxb46evwuna6" path="res://Assets/Game/деревья/fruit/Fruit+.png" id="2_fruit"]
+[ext_resource type="Texture2D" uid="uid://da1aloom1q1jv" path="res://Assets/png static/moneta.png" id="3_coin"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apple"]
+atlas = ExtResource("2_fruit")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_counter"]
+font_size = 22
+
+[node name="Counter" type="Node2D" unique_id=1443450663 node_paths=PackedStringArray("apples_counter", "coins_counter")]
+script = ExtResource("1_2f1pi")
+apples_counter = NodePath("Control/CanvasLayer/VBoxContainer/ApplesRow/ApplesCounter")
+coins_counter = NodePath("Control/CanvasLayer/VBoxContainer/CoinsRow/CoinsCounter")
+
+[node name="Control" type="Control" parent="." unique_id=780751686]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 100.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Control" unique_id=517527871]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CanvasLayer"]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 160.0
+offset_bottom = 80.0
+theme_override_constants/separation = 8
+
+[node name="ApplesRow" type="HBoxContainer" parent="Control/CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="AppleIcon" type="TextureRect" parent="Control/CanvasLayer/VBoxContainer/ApplesRow"]
+layout_mode = 2
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+texture = SubResource("AtlasTexture_apple")
+expand_mode = 0
+stretch_mode = 5
+
+[node name="ApplesCounter" type="Label" parent="Control/CanvasLayer/VBoxContainer/ApplesRow" unique_id=21668461]
+layout_mode = 2
+text = "0"
+vertical_alignment = 1
+label_settings = SubResource("LabelSettings_counter")
+
+[node name="CoinsRow" type="HBoxContainer" parent="Control/CanvasLayer/VBoxContainer" unique_id=2046719566]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="CoinIcon" type="TextureRect" parent="Control/CanvasLayer/VBoxContainer/CoinsRow"]
+layout_mode = 2
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+texture = ExtResource("3_coin")
+expand_mode = 0
+stretch_mode = 5
+
+[node name="CoinsCounter" type="Label" parent="Control/CanvasLayer/VBoxContainer/CoinsRow" unique_id=722459568]
+layout_mode = 2
+text = "0"
+vertical_alignment = 1
+label_settings = SubResource("LabelSettings_counter")

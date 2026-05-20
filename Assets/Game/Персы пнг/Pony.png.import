@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djx15q215vyi4"
-path="res://.godot/imported/пони вправо.png-df85e87f0fe16615fe943196aad03753.ctex"
+uid="uid://ck4jpep8huiiy"
+path="res://.godot/imported/Pony.png-6034aa795e3fda44a4b391b9b733393b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Game/пони вправо.png"
-dest_files=["res://.godot/imported/пони вправо.png-df85e87f0fe16615fe943196aad03753.ctex"]
+source_file="res://Assets/Game/Персы пнг/Pony.png"
+dest_files=["res://.godot/imported/Pony.png-6034aa795e3fda44a4b391b9b733393b.ctex"]
 
 [params]
 
