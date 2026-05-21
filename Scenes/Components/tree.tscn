@@ -1,28 +1,73 @@
-[gd_scene format=3 uid="uid://c3ifjjxy6qbhc"]
+[gd_scene format=3 uid="uid://bq20ly5mijc41"]
 
 [ext_resource type="Script" uid="uid://bafhlpawopdfi" path="res://Scenes/Components/tree.gd" id="1_nnvrw"]
-[ext_resource type="Texture2D" uid="uid://bl5y1hh7lm25m" path="res://Assets/Game/дерево.png" id="2_agspb"]
-<<<<<<< HEAD
+[ext_resource type="Texture2D" uid="uid://bp6c1irmhhors" path="res://Assets/Game/деревья/derevo_bez_yablok.png" id="2_jlx0s"]
 [ext_resource type="PackedScene" uid="uid://dam1rkpa0q4ek" path="res://Scenes/Components/apple.tscn" id="3_agspb"]
 [ext_resource type="Script" uid="uid://orxioh3vqlee" path="res://Scenes/Components/apples_fall_trigger.gd" id="4_jlx0s"]
-=======
-[ext_resource type="PackedScene" uid="uid://dam1rkpa0q4ek" path="res://Scenes/Components/Apple.tscn" id="3_agspb"]
->>>>>>> be79633d48fc7a978e2c8305c747e24e9195b433
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jlx0s"]
-atlas = ExtResource("2_agspb")
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgjrp"]
+atlas = ExtResource("2_jlx0s")
+region = Rect2(0, 0, 62, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t83kr"]
+atlas = ExtResource("2_jlx0s")
+region = Rect2(62, 0, 62, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15g7q"]
+atlas = ExtResource("2_jlx0s")
+region = Rect2(124, 0, 62, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyi73"]
+atlas = ExtResource("2_jlx0s")
+region = Rect2(186, 0, 62, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apwci"]
+atlas = ExtResource("2_jlx0s")
+region = Rect2(248, 0, 62, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ly6l1"]
+atlas = ExtResource("2_jlx0s")
+region = Rect2(310, 0, 62, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4bx6"]
+atlas = ExtResource("2_jlx0s")
+region = Rect2(372, 0, 62, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7m2gn"]
+atlas = ExtResource("2_jlx0s")
 region = Rect2(372, 0, 62, 76)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gvmkm"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgjrp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t83kr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15g7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyi73")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apwci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ly6l1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4bx6")
+}],
 "loop": true,
 "name": &"growing",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jlx0s")
+"texture": SubResource("AtlasTexture_7m2gn")
 }],
 "loop": true,
 "name": &"idle",
@@ -33,7 +78,6 @@ animations = [{
 size = Vector2(128, 152)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jlx0s"]
-<<<<<<< HEAD
 size = Vector2(40, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mgjrp"]
@@ -46,25 +90,11 @@ physics_collision = NodePath("RigidBody2D/CollisionShape2D")
 apples = [NodePath("Apple"), NodePath("Apple2"), NodePath("Apple3"), NodePath("Apple4"), NodePath("Apple5")]
 root = NodePath(".")
 apples_fall_trigger = NodePath("ApplesFallTrigger")
-=======
-size = Vector2(40, 16)
-
-[node name="Tree" type="Node2D" unique_id=1838805258 node_paths=PackedStringArray("physics_collision", "apples", "root")]
-position = Vector2(8, 0)
-script = ExtResource("1_nnvrw")
-physics_collision = NodePath("RigidBody2D/CollisionShape2D")
-apples = [NodePath("Apple"), NodePath("Apple2"), NodePath("Apple3"), NodePath("Apple4"), NodePath("Apple5"), NodePath("Apple6")]
-root = NodePath(".")
->>>>>>> be79633d48fc7a978e2c8305c747e24e9195b433
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=9809298]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_gvmkm")
-<<<<<<< HEAD
-animation = &"growing"
-=======
 animation = &"idle"
->>>>>>> be79633d48fc7a978e2c8305c747e24e9195b433
 
 [node name="Area2D" type="Area2D" parent="." unique_id=252000675]
 
@@ -73,7 +103,6 @@ position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_agspb")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1731551403]
-<<<<<<< HEAD
 collision_layer = 4
 collision_mask = 15
 freeze = true
@@ -83,24 +112,24 @@ position = Vector2(4, 52)
 shape = SubResource("RectangleShape2D_jlx0s")
 
 [node name="Apple" parent="." unique_id=1285878442 instance=ExtResource("3_agspb")]
-position = Vector2(-32, -32)
 visible = false
+position = Vector2(-32, -32)
 
 [node name="Apple2" parent="." unique_id=1582995557 instance=ExtResource("3_agspb")]
-position = Vector2(24, 24)
 visible = false
+position = Vector2(24, 24)
 
 [node name="Apple3" parent="." unique_id=1855640887 instance=ExtResource("3_agspb")]
-position = Vector2(-24, 0)
 visible = false
+position = Vector2(-24, 0)
 
 [node name="Apple4" parent="." unique_id=840364509 instance=ExtResource("3_agspb")]
-position = Vector2(8, -16)
 visible = false
+position = Vector2(8, -16)
 
 [node name="Apple5" parent="." unique_id=609748545 instance=ExtResource("3_agspb")]
-position = Vector2(-56, 24)
 visible = false
+position = Vector2(-56, 24)
 
 [node name="ApplesFallTrigger" type="Area2D" parent="." unique_id=499302426]
 collision_layer = 64
@@ -110,28 +139,3 @@ script = ExtResource("4_jlx0s")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ApplesFallTrigger" unique_id=1550597090]
 position = Vector2(0, 72)
 shape = SubResource("RectangleShape2D_mgjrp")
-=======
-freeze = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=825983535]
-position = Vector2(4, 64)
-shape = SubResource("RectangleShape2D_jlx0s")
-
-[node name="Apple" parent="." unique_id=1159452498 instance=ExtResource("3_agspb")]
-position = Vector2(40, 8)
-
-[node name="Apple2" parent="." unique_id=820120222 instance=ExtResource("3_agspb")]
-position = Vector2(24, 24)
-
-[node name="Apple3" parent="." unique_id=805302789 instance=ExtResource("3_agspb")]
-position = Vector2(-32, -32)
-
-[node name="Apple4" parent="." unique_id=833795272 instance=ExtResource("3_agspb")]
-position = Vector2(8, -16)
-
-[node name="Apple5" parent="." unique_id=1550570221 instance=ExtResource("3_agspb")]
-position = Vector2(-24, 0)
-
-[node name="Apple6" parent="." unique_id=1663032633 instance=ExtResource("3_agspb")]
-position = Vector2(-48, 24)
->>>>>>> be79633d48fc7a978e2c8305c747e24e9195b433

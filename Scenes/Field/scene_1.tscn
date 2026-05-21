@@ -2,21 +2,16 @@
 
 [ext_resource type="TileSet" uid="uid://cb00sslemlrrw" path="res://TileSets/game_tile_set.tres" id="1_uxt1w"]
 [ext_resource type="PackedScene" uid="uid://bsx5nxs57sw3c" path="res://Scenes/Перс/Girl/девочка.tscn" id="2_ivs6x"]
-[ext_resource type="PackedScene" uid="uid://c3ifjjxy6qbhc" path="res://Scenes/Components/tree.tscn" id="3_8m18q"]
+[ext_resource type="PackedScene" uid="uid://bq20ly5mijc41" path="res://Scenes/Components/tree.tscn" id="3_8m18q"]
 [ext_resource type="PackedScene" uid="uid://b8ia4nt520g7w" path="res://Scenes/Components/pony.tscn" id="4_ck0p7"]
 [ext_resource type="Script" uid="uid://fyuj7tdu2dtw" path="res://Scenes/Field/signal_bus.gd" id="5_y3erl"]
-<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://hcgcys36s70p" path="res://Scenes/Components/Basket.tscn" id="6_u6v2t"]
 [ext_resource type="PackedScene" uid="uid://daqgubnggle1p" path="res://Scenes/Components/UI.tscn" id="7_oq6in"]
 [ext_resource type="Script" uid="uid://ct5ubl5vdn5xn" path="res://Scenes/Field/cursor_manager.gd" id="8_juqub"]
-[ext_resource type="PackedScene" path="res://Scenes/Components/SalePanel.tscn" id="10_f2nxy"]
+[ext_resource type="PackedScene" uid="uid://crewf1nuveoh1" path="res://Scenes/Components/SalePanel.tscn" id="10_f2nxy"]
 [ext_resource type="PackedScene" uid="uid://bbslk13c1fac3" path="res://Scenes/Components/Larec.tscn" id="10_larec"]
 [ext_resource type="Resource" uid="uid://c1c433is7oh5m" path="res://game_settings.tres" id="11_0wtbw"]
-[ext_resource type="PackedScene" path="res://Scenes/Components/GoalPanel.tscn" id="12_goal"]
-=======
-[ext_resource type="PackedScene" uid="uid://hcgcys36s70p" path="res://Scenes/Components/Basket.tscn" id="6_oq6in"]
-[ext_resource type="Script" uid="uid://ct5ubl5vdn5xn" path="res://Scenes/Field/cursor_manager.gd" id="6_u6v2t"]
->>>>>>> be79633d48fc7a978e2c8305c747e24e9195b433
+[ext_resource type="PackedScene" uid="uid://hhvi630cx1tv" path="res://Scenes/Components/GoalPanel.tscn" id="12_goal"]
 
 [node name="Scene 1" type="Node2D" unique_id=145392554]
 position = Vector2(-5, 7)
@@ -41,7 +36,6 @@ position = Vector2(702, 153)
 signal_bus = NodePath("../SignalBus")
 
 [node name="Tree2" parent="." unique_id=1772709192 node_paths=PackedStringArray("signal_bus") groups=["trees"] instance=ExtResource("3_8m18q")]
-<<<<<<< HEAD
 position = Vector2(974, 129)
 signal_bus = NodePath("../SignalBus")
 
@@ -55,27 +49,11 @@ signal_bus = NodePath("../SignalBus")
 
 [node name="Pony" parent="." unique_id=1759426126 node_paths=PackedStringArray("signal_bus") instance=ExtResource("4_ck0p7")]
 position = Vector2(734, 345)
-=======
-position = Vector2(918, 129)
-signal_bus = NodePath("../SignalBus")
-
-[node name="Tree3" parent="." unique_id=1708440672 node_paths=PackedStringArray("signal_bus") groups=["trees"] instance=ExtResource("3_8m18q")]
-position = Vector2(766, 353)
-signal_bus = NodePath("../SignalBus")
-
-[node name="Tree4" parent="." unique_id=326906330 node_paths=PackedStringArray("signal_bus") groups=["trees"] instance=ExtResource("3_8m18q")]
-position = Vector2(974, 297)
-signal_bus = NodePath("../SignalBus")
-
-[node name="Pony" parent="." unique_id=1759426126 node_paths=PackedStringArray("signal_bus") instance=ExtResource("4_ck0p7")]
-position = Vector2(534, 481)
->>>>>>> be79633d48fc7a978e2c8305c747e24e9195b433
 signal_bus = NodePath("../SignalBus")
 
 [node name="SignalBus" type="Node" parent="." unique_id=505979432]
 script = ExtResource("5_y3erl")
 
-<<<<<<< HEAD
 [node name="Basket" parent="." unique_id=730857903 node_paths=PackedStringArray("signal_bus") instance=ExtResource("6_u6v2t")]
 position = Vector2(702, 217)
 signal_bus = NodePath("../SignalBus")
@@ -96,12 +74,4 @@ signal_bus = NodePath("../SignalBus")
 settings = ExtResource("11_0wtbw")
 
 [node name="GoalPanel" parent="." unique_id=1679454670 node_paths=PackedStringArray("signal_bus") instance=ExtResource("12_goal")]
-=======
-[node name="Basket" parent="." unique_id=1248266407 node_paths=PackedStringArray("signal_bus") instance=ExtResource("6_oq6in")]
-position = Vector2(734, 209)
-signal_bus = NodePath("../SignalBus")
-
-[node name="CursorManager" type="Node" parent="." unique_id=2020337473 node_paths=PackedStringArray("signal_bus")]
-script = ExtResource("6_u6v2t")
->>>>>>> be79633d48fc7a978e2c8305c747e24e9195b433
 signal_bus = NodePath("../SignalBus")

@@ -1,18 +1,20 @@
-[gd_scene format=3 uid="uid://sale_zone_scene"]
+[gd_scene format=3 uid="uid://dsde7bxe1e3ki"]
 
-[ext_resource type="Script" path="res://Scenes/Components/sale_zone.gd" id="1_sz"]
+[ext_resource type="Script" uid="uid://cak6nk53usrdj" path="res://Scenes/Components/sale_zone.gd" id="1_sz"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sz"]
 size = Vector2(120, 80)
 
-[node name="SaleZone" type="Area2D"]
+[node name="SaleZone" type="Area2D" unique_id=144382740]
 collision_layer = 2
-collision_mask = 1
 script = ExtResource("1_sz")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1703063442]
 shape = SubResource("RectangleShape2D_sz")
 
-[node name="HintBubble" type="Label" parent="."]
-position = Vector2(-90, -60)
+[node name="HintBubble" type="Label" parent="." unique_id=1119231753]
+offset_left = -90.0
+offset_top = -60.0
+offset_right = -90.0
+offset_bottom = -60.0
 text = "Нажмите E, чтобы продать яблоки"

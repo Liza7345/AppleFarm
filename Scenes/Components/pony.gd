@@ -6,18 +6,13 @@ extends Node2D
 @onready var area = $Area2D
 @onready var lable_node = $Label
 @onready var animated_sprite = $AnimatedSprite2D
-<<<<<<< HEAD
+
 @onready var body_collider: CollisionShape2D = $RigidBody2D/CollisionShape2D
 
 var player_in_range: bool = false
 var target_tree: Node = null
 var is_moving_to_tree : bool = false
-=======
 
-var player_in_range: bool = false
-var target_tree: Node = null
-var is_moving_to_tree : bool = true
->>>>>>> be79633d48fc7a978e2c8305c747e24e9195b433
 var is_hitting_tree : bool = false
 var current_point : Vector2 = Vector2.ZERO
 var direction: Vector2 = Vector2.ZERO
@@ -32,9 +27,6 @@ func _ready() -> void:
 	signal_bus.current_tree_selected.connect(_on_current_tree_selected)
 	lable_node.visible = false
 
-<<<<<<< HEAD
-func _on_current_tree_selected(shape : CollisionShape2D):
-=======
 func _on_animation_finished(): 
 	print ("_on_animation_finished вызвалась")
 	if animated_sprite.animation == "idle_hit":
@@ -48,24 +40,12 @@ func idle():
 	
 func _on_current_tree_selected(shape : CollisionShape2D):
 	is_moving_to_tree = true
->>>>>>> be79633d48fc7a978e2c8305c747e24e9195b433
 	current_point = get_closest_point_on_rectangle(shape)
 	print(current_point)
 	hide_selection_promt()
 	start_moving_to_tree()
 
-<<<<<<< HEAD
-# Эта функция вызовется после окончания ЛЮБОЙ анимации
-func _on_animation_finished():
-	print("_on_animation_finished вызвалась")
-	if animated_sprite.animation == "idle_hit":
-		# Анимация удара закончилась - ставим idle
-		print("анимация закончила играть")
-		idle()
-		signal_bus.apples_fall.emit()
-		
-=======
->>>>>>> be79633d48fc7a978e2c8305c747e24e9195b433
+
 # Возвращает ближайшую точку на прямоугольном коллайдере к позиции пони
 func get_closest_point_on_rectangle(collision: CollisionShape2D) -> Vector2:
 	if not collision or not collision.shape:
@@ -106,17 +86,13 @@ func show_selection_promt():
 
 func start_moving_to_tree():
 	is_moving_to_tree = true
-<<<<<<< HEAD
 	body_collider.set_deferred("disabled", true)
-=======
->>>>>>> be79633d48fc7a978e2c8305c747e24e9195b433
 	print("🦄 Пони движется к точке: ", current_point)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	# Движение пони
 	if is_moving_to_tree and current_point != Vector2.ZERO:
-<<<<<<< HEAD
 		print("moving towards tree")
 		move_towards_tree(delta)
 		# Обновляем анимацию в зависимости от направления
@@ -124,14 +100,7 @@ func _physics_process(delta):
 		
 	elif is_hitting_tree:
 		animated_sprite.play("idle_hit")
-		
-=======
-		move_towards_tree(delta)
-		# Обновляем анимацию в зависимости от направления
-		update_movement_animation(direction)
-	elif is_hitting_tree:
-		animated_sprite.play("idle_hit")
->>>>>>> be79633d48fc7a978e2c8305c747e24e9195b433
+
 	else:
 		animated_sprite.play("idle")
 		
@@ -145,54 +114,29 @@ func move_towards_tree(delta):
 		
 func on_reached_tree():
 	is_moving_to_tree = false
-<<<<<<< HEAD
 	body_collider.set_deferred("disabled", false)
-=======
->>>>>>> be79633d48fc7a978e2c8305c747e24e9195b433
 	print("🦄 Пони достигла дерева!")
 	
 	# Поворачиваем пони к дереву (опционально)
 	face_tree()
 	
 	print("пони развернулась")
-<<<<<<< HEAD
 	signal_bus.show_basket.emit(current_point)
 	# Запускаем анимацию удара
 	hit_tree()
-
-func hit_tree():
-	is_moving_to_tree = false
-	is_hitting_tree = true
-	
-func idle():
-	is_hitting_tree = false
-	is_moving_to_tree = false
 	
 func face_tree():
 	# Поворачиваем пони лицом к дереву
-	animated_sprite.play("idle")
-=======
-	# Запускаем анимацию ударa
-	signal_bus.show_basket.emit(current_point)
-	# Собираем яблоки
-	collect_apples()
-	
-	hit_tree()
-	
-func face_tree():
-	# Поворачиваем пони лицом к дереву
->>>>>>> be79633d48fc7a978e2c8305c747e24e9195b433
 	var direction = current_point - global_position
 	if abs(direction.x) > abs(direction.y):
 		if direction.x > 0:
 			animated_sprite.scale.x = abs(animated_sprite.scale.x)
 		else:
 			animated_sprite.scale.x = -abs(animated_sprite.scale.x)
-
-func collect_apples():
-	#TODO: появляется корзинка
-	print("Анимация закончила играть")
-	pass
+	# Запускаем анимацию ударa
+	signal_bus.show_basket.emit(current_point)
+	
+	hit_tree()
 	
 func update_movement_animation(direction):
 	# Обновляем анимацию в зависимости от направления
@@ -202,11 +146,7 @@ func update_movement_animation(direction):
 	else:
 		animated_sprite.play("idle_right")
 		animated_sprite.scale.x = -abs(animated_sprite.scale.x)
-<<<<<<< HEAD
-	
-=======
 		
 func hit_tree():
 	is_moving_to_tree = false
 	is_hitting_tree = true
->>>>>>> be79633d48fc7a978e2c8305c747e24e9195b433
