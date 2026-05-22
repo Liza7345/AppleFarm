@@ -18,9 +18,14 @@ config/icon="res://icon.svg"
 [autoload]
 
 SignalBus="*uid://fyuj7tdu2dtw"
-Apple="*uid://dph03gu8hdhbr"
-ApplesFallTrigger="*uid://orxioh3vqlee"
 CursorManager="*uid://ct5ubl5vdn5xn"
+Apple="*uid://dph03gu8hdhbr"
+GameEndedScene="*uid://b7e6anxuryy6h"
+ApplesFallTrigger="*uid://orxioh3vqlee"
+
+[display]
+
+mouse_cursor/custom_image="uid://it5nqgk8yjj2"
 
 [input]
 

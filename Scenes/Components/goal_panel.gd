@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@export var signal_bus: SignalBus = null
+@onready var signal_bus = SignalBus
 
 @onready var spinbox: SpinBox = $Control/Panel/VBoxContainer/SpinBox
 @onready var start_button: Button = $Control/Panel/VBoxContainer/StartButton

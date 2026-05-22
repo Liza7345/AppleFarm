@@ -1,14 +1,13 @@
 extends Node2D
 
-@export var signal_bus : SignalBus = null
 @export var physics_collision: CollisionShape2D = null
 @export var apples : Array[AppleNode] = []
 @export var root : Node2D = null
-@export var apples_fall_trigger : ApplesFallTrigger = null
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var area = $Area2D
-
+@onready var signal_bus = SignalBus
+@onready var apples_fall_trigger = $ApplesFallTrigger
 var selection_mode: bool = false
 var is_grown: bool = false
 var _is_regrowing: bool = false

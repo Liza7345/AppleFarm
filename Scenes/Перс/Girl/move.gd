@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed: float = 150.0
-@export var signal_bus: SignalBus = null
+@onready var signal_bus = SignalBus
 @onready var animated_sprite = $AnimatedSprite2D
 
 var direction = Vector2.ZERO

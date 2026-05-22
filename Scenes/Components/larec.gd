@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var signal_bus: SignalBus = null
+@onready var signal_bus = SignalBus
 @onready var sale_zone = $SaleZone
 
 func _ready() -> void:

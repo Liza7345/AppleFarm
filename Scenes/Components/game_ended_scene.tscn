@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://o2fkej2emxx5"]
+
+[ext_resource type="Script" uid="uid://b7e6anxuryy6h" path="res://Scenes/Components/game_ended_scene.gd" id="1_pv185"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_haxtb"]
+font_size = 30
+
+[node name="GameEndedScene" type="Control" unique_id=259108241 node_paths=PackedStringArray("game_ended_panel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pv185")
+game_ended_panel = NodePath(".")
+
+[node name="Control" type="Control" parent="." unique_id=1822698692]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Control" unique_id=745514949]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 216.0
+offset_right = 768.0
+offset_bottom = 408.0
+
+[node name="Label" type="Label" parent="Control/Panel" unique_id=660338100]
+layout_mode = 0
+offset_right = 384.0
+offset_bottom = 192.0
+text = "Цель достигнута"
+label_settings = SubResource("LabelSettings_haxtb")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,8 +1,9 @@
 extends Node2D
 
-@export var signal_bus: SignalBus = null
 @export var apples_counter: Label = null
 @export var coins_counter: Label = null
+
+@onready var signal_bus = SignalBus
 
 var count: int = 0
 

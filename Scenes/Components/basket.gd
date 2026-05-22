@@ -2,7 +2,7 @@ extends Node2D
 
 @export var empty_basket : Sprite2D = null
 @export var basket_with_apples : Sprite2D = null
-@export var signal_bus: SignalBus = null
+@onready var signal_bus = SignalBus
 
 var apples_count = 0
 

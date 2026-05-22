@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bafhlpawopdfi" path="res://Scenes/Components/tree.gd" id="1_nnvrw"]
 [ext_resource type="Texture2D" uid="uid://bp6c1irmhhors" path="res://Assets/Game/деревья/derevo_bez_yablok.png" id="2_jlx0s"]
-[ext_resource type="PackedScene" uid="uid://dam1rkpa0q4ek" path="res://Scenes/Components/apple.tscn" id="3_agspb"]
+[ext_resource type="PackedScene" uid="uid://d3tcse5wikuok" path="res://Scenes/Components/apple.tscn" id="3_agspb"]
 [ext_resource type="Script" uid="uid://orxioh3vqlee" path="res://Scenes/Components/apples_fall_trigger.gd" id="4_jlx0s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mgjrp"]
@@ -83,13 +83,12 @@ size = Vector2(40, 40)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mgjrp"]
 size = Vector2(128, 10)
 
-[node name="Tree" type="Node2D" unique_id=1838805258 node_paths=PackedStringArray("physics_collision", "apples", "root", "apples_fall_trigger")]
+[node name="Tree" type="Node2D" unique_id=1838805258 node_paths=PackedStringArray("physics_collision", "apples", "root")]
 position = Vector2(8, 0)
 script = ExtResource("1_nnvrw")
 physics_collision = NodePath("RigidBody2D/CollisionShape2D")
 apples = [NodePath("Apple"), NodePath("Apple2"), NodePath("Apple3"), NodePath("Apple4"), NodePath("Apple5")]
 root = NodePath(".")
-apples_fall_trigger = NodePath("ApplesFallTrigger")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=9809298]
 scale = Vector2(2, 2)

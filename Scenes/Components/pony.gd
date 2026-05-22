@@ -1,12 +1,10 @@
 extends Node2D
-
-@export var signal_bus : SignalBus = null
 @export var move_speed: float = 200.0 
 
 @onready var area = $Area2D
 @onready var lable_node = $Label
 @onready var animated_sprite = $AnimatedSprite2D
-
+@onready var signal_bus = SignalBus
 @onready var body_collider: CollisionShape2D = $RigidBody2D/CollisionShape2D
 
 var player_in_range: bool = false
