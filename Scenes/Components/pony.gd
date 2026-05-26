@@ -15,6 +15,7 @@ var is_moving_to_tree : bool = false
 
 var is_hitting_tree : bool = false
 var current_point : Vector2 = Vector2.ZERO
+var tree_center : Vector2 = Vector2.ZERO
 var direction: Vector2 = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
@@ -41,7 +42,8 @@ func idle():
 func _on_current_tree_selected(shape : CollisionShape2D):
 	is_moving_to_tree = true
 	current_point = get_closest_point_on_rectangle(shape)
-	print(current_point)
+	if shape:
+		tree_center = shape.global_position
 	hide_selection_promt()
 	start_moving_to_tree()
 
@@ -116,27 +118,20 @@ func on_reached_tree():
 	is_moving_to_tree = false
 	body_collider.set_deferred("disabled", false)
 	print("🦄 Пони достигла дерева!")
-	
-	# Поворачиваем пони к дереву (опционально)
 	face_tree()
-	
-	print("пони развернулась")
-	signal_bus.show_basket.emit(current_point)
-	# Запускаем анимацию удара
+	# Корзина появляется с противоположной стороны дерева по X
+	var basket_pos = Vector2(2.0 * tree_center.x - current_point.x, current_point.y)
+	signal_bus.show_basket.emit(basket_pos)
 	hit_tree()
-	
+
 func face_tree():
 	# Поворачиваем пони лицом к дереву
-	var direction = current_point - global_position
-	if abs(direction.x) > abs(direction.y):
-		if direction.x > 0:
+	var dir = current_point - global_position
+	if abs(dir.x) > abs(dir.y):
+		if dir.x > 0:
 			animated_sprite.scale.x = abs(animated_sprite.scale.x)
 		else:
 			animated_sprite.scale.x = -abs(animated_sprite.scale.x)
-	# Запускаем анимацию ударa
-	signal_bus.show_basket.emit(current_point)
-	
-	hit_tree()
 	
 func update_movement_animation(direction):
 	# Обновляем анимацию в зависимости от направления

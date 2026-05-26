@@ -17,6 +17,7 @@
 
 [node name="Scene 1" type="Node2D" unique_id=145392554]
 position = Vector2(-5, 7)
+y_sort_enabled = true
 
 [node name="Map" type="Node2D" parent="." unique_id=1310551120]
 
