@@ -14,8 +14,10 @@ func _ready() -> void:
 
 func set_signal_bus(_signal_bus : SignalBus):
 	signal_bus = _signal_bus
-	signal_bus.current_tree_selected_root.connect(_on_current_tree_selected_root)
-	signal_bus.apples_fall.connect(_on_apples_fall)
+	if not signal_bus.current_tree_selected_root.is_connected(_on_current_tree_selected_root):
+		signal_bus.current_tree_selected_root.connect(_on_current_tree_selected_root)
+	if not signal_bus.apples_fall.is_connected(_on_apples_fall):
+		signal_bus.apples_fall.connect(_on_apples_fall)
 
 
 func find_first_of_type(type : String) -> Node:

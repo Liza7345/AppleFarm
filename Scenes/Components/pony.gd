@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var signal_bus : SignalBus = null
+@onready var signal_bus = SignalBus
 @export var move_speed: float = 200.0 
 
 @onready var area = $Area2D

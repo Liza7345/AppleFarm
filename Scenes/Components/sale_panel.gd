@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@export var signal_bus: SignalBus = null
+@onready var signal_bus = SignalBus
 @export var settings: GameSettings = null
 
 @onready var spinbox: SpinBox = $Control/Panel/VBoxContainer/ExchangeRow/AppleCol/SpinBox
@@ -9,15 +9,34 @@ extends CanvasLayer
 
 var apple_count: int = 0
 var coins: int = 0
+var goal = 0
 
 func _ready() -> void:
 	signal_bus.sale_zone_opened.connect(_on_sale_zone_opened)
 	signal_bus.gather_apple.connect(_on_gather_apple)
 	signal_bus.sell_apples.connect(_on_sell_apples)
 	spinbox.value_changed.connect(_on_spinbox_value_changed)
+	signal_bus.game_started.connect(_on_game_started)
+	signal_bus.load_goal.connect(_on_load_goal)
+	signal_bus.load_coins.connect(_on_coins_loaded)
+	signal_bus.load_apples_collected.connect(_on_apples_collected_loaded)
 	$Control/Panel/VBoxContainer/ButtonsRow/SellButton.pressed.connect(_on_sell_pressed)
 	$Control/Panel/VBoxContainer/ButtonsRow/CloseButton.pressed.connect(_on_close_pressed)
 
+func _on_coins_loaded(_coins):
+	coins = _coins
+	
+func _on_apples_collected_loaded(apples):
+	apple_count = apples
+	
+func _on_game_started(_goal: int) -> void:
+	goal = _goal
+	apple_count = 0
+	coins = 0
+
+func _on_load_goal(_goal: int) -> void:
+	goal = _goal
+	
 func _on_sale_zone_opened() -> void:
 	if apple_count == 0:
 		spinbox.min_value = 0
@@ -53,9 +72,13 @@ func _on_sell_pressed() -> void:
 	if count <= 0 or count > apple_count:
 		return
 	apple_count -= count
+	print("Количество монет перед продажей", coins)
 	coins += count * settings.apple_price
 	signal_bus.sell_apples.emit(count, coins)
 	_close()
+	
+	if coins >= goal:
+		signal_bus.game_ended.emit()
 
 func _on_close_pressed() -> void:
 	_close()

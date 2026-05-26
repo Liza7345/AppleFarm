@@ -21,6 +21,8 @@ SignalBus="*uid://fyuj7tdu2dtw"
 Apple="*uid://dph03gu8hdhbr"
 ApplesFallTrigger="*uid://orxioh3vqlee"
 CursorManager="*uid://ct5ubl5vdn5xn"
+GameEndedScene="*uid://b7e6anxuryy6h"
+GameSaver="*res://Scenes/Field/game_saver.gd"
 
 [input]
 

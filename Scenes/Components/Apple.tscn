@@ -1,12 +1,10 @@
 [gd_scene format=3 uid="uid://dam1rkpa0q4ek"]
 
-[ext_resource type="Texture2D" uid="uid://di8u66y2e5uxp" path="res://Assets/Game/Map/фрукты/Fruit+.png" id="1_4y5vy"]
-[ext_resource type="Script" uid="uid://dph03gu8hdhbr" path="res://Scenes/Components/apple.gd" id="1_e771c"]
+[ext_resource type="Script" uid="uid://dph03gu8hdhbr" path="res://Scenes/Components/apple.gd" id="1_lvlxw"]
+[ext_resource type="Texture2D" uid="uid://chxb46evwuna6" path="res://Assets/Game/деревья/fruit/Fruit+.png" id="1_rf5xg"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hc1my"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e771c"]
-texture = ExtResource("1_4y5vy")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lvlxw"]
+texture = ExtResource("1_rf5xg")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -236,21 +234,26 @@ texture = ExtResource("1_4y5vy")
 36:5/0 = 0
 37:5/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_g0o5b"]
-sources/0 = SubResource("TileSetAtlasSource_e771c")
+[sub_resource type="TileSet" id="TileSet_y70aa"]
+sources/0 = SubResource("TileSetAtlasSource_lvlxw")
 
-[node name="Apple" type="Node2D" unique_id=1159452498 node_paths=PackedStringArray("rigid_body")]
-script = ExtResource("1_e771c")
-rigid_body = NodePath("RigidBody2D")
+[sub_resource type="CircleShape2D" id="CircleShape2D_rf5xg"]
+radius = 8.0
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=31601925]
+[node name="Apple" type="Node2D" unique_id=1285878442 node_paths=PackedStringArray("rigid_body")]
+script = ExtResource("1_lvlxw")
+rigid_body = NodePath("AppleRigidBody2D")
+
+[node name="AppleRigidBody2D" type="RigidBody2D" parent="." unique_id=751077160]
+collision_layer = 32
+collision_mask = 64
 freeze = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1657192344]
-position = Vector2(8, -8)
-shape = SubResource("CircleShape2D_hc1my")
-
-[node name="TileMap" type="TileMap" parent="RigidBody2D" unique_id=2063045599]
-tile_set = SubResource("TileSet_g0o5b")
+[node name="TileMap" type="TileMap" parent="AppleRigidBody2D" unique_id=1952190076]
+tile_set = SubResource("TileSet_y70aa")
 format = 2
 layer_0/tile_data = PackedInt32Array(-65536, 0, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AppleRigidBody2D" unique_id=1050853657]
+position = Vector2(8, -8)
+shape = SubResource("CircleShape2D_rf5xg")

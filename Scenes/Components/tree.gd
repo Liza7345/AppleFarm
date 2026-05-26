@@ -1,13 +1,14 @@
 extends Node2D
 
-@export var signal_bus : SignalBus = null
 @export var physics_collision: CollisionShape2D = null
 @export var apples : Array[AppleNode] = []
 @export var root : Node2D = null
-@export var apples_fall_trigger : ApplesFallTrigger = null
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var area = $Area2D
+@onready var signal_bus = SignalBus
+@onready var apples_fall_trigger = $ApplesFallTrigger
+
 
 var selection_mode: bool = false
 var is_grown: bool = false
@@ -21,9 +22,9 @@ func _ready() -> void:
 	signal_bus.selection_mode_exited.connect(_on_selection_mode_exited)
 	signal_bus.game_started.connect(_on_game_started)
 	signal_bus.gather_apple.connect(_on_gather_apple)
-
+	signal_bus.load_trees.connect(_on_trees_loaded)
 	apples_fall_trigger.set_signal_bus(signal_bus)
-
+	
 	_setup_growing_animation()
 
 	for apple in apples:
@@ -32,10 +33,25 @@ func _ready() -> void:
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 
 func _on_game_started(_goal: int) -> void:
+	is_grown = false
+	_is_regrowing = false
+	_regrow_timers.clear()
+	area.monitoring = true
+	area.monitorable = true
 	animated_sprite.play("growing")
 	for apple in apples:
 		apple.set_signal_bus(signal_bus)
-
+		apple.visible = false
+		if apple.rigid_body:
+			apple.rigid_body.position = Vector2.ZERO
+			apple.rigid_body.freeze = true
+			apple.rigid_body.visible = true
+		
+func _on_trees_loaded(trees):
+	animated_sprite.play("growing")
+	for apple in apples:
+		apple.set_signal_bus(signal_bus)
+		
 func _on_selection_mode_entered():
 	selection_mode = true
 	
@@ -122,6 +138,17 @@ func _check_all_regrown() -> void:
 	_regrow_timers.clear()
 	area.monitoring = true
 	area.monitorable = true
+
+func get_save_data() -> Dictionary:
+	var visible_count := 0
+	for apple in apples:
+		if apple.rigid_body != null and apple.rigid_body.visible:
+			visible_count += 1
+	return {
+		"tree_name": name,
+		"apples_on_tree": visible_count,
+		"is_regrowing": _is_regrowing,
+	}
 
 func _disable_area() -> void:
 	area.set_deferred("monitoring", false)

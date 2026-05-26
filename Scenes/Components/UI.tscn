@@ -24,45 +24,43 @@ offset_bottom = 100.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Control" unique_id=517527871]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/CanvasLayer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CanvasLayer" unique_id=1206574863]
 offset_left = 12.0
 offset_top = 12.0
 offset_right = 160.0
 offset_bottom = 80.0
 theme_override_constants/separation = 8
 
-[node name="ApplesRow" type="HBoxContainer" parent="Control/CanvasLayer/VBoxContainer"]
+[node name="ApplesRow" type="HBoxContainer" parent="Control/CanvasLayer/VBoxContainer" unique_id=572446276]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="AppleIcon" type="TextureRect" parent="Control/CanvasLayer/VBoxContainer/ApplesRow"]
-layout_mode = 2
+[node name="AppleIcon" type="TextureRect" parent="Control/CanvasLayer/VBoxContainer/ApplesRow" unique_id=1765882450]
 texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
 texture = SubResource("AtlasTexture_apple")
-expand_mode = 0
 stretch_mode = 5
 
 [node name="ApplesCounter" type="Label" parent="Control/CanvasLayer/VBoxContainer/ApplesRow" unique_id=21668461]
 layout_mode = 2
 text = "0"
-vertical_alignment = 1
 label_settings = SubResource("LabelSettings_counter")
+vertical_alignment = 1
 
 [node name="CoinsRow" type="HBoxContainer" parent="Control/CanvasLayer/VBoxContainer" unique_id=2046719566]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="CoinIcon" type="TextureRect" parent="Control/CanvasLayer/VBoxContainer/CoinsRow"]
-layout_mode = 2
+[node name="CoinIcon" type="TextureRect" parent="Control/CanvasLayer/VBoxContainer/CoinsRow" unique_id=731274350]
 texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
 texture = ExtResource("3_coin")
-expand_mode = 0
 stretch_mode = 5
 
 [node name="CoinsCounter" type="Label" parent="Control/CanvasLayer/VBoxContainer/CoinsRow" unique_id=722459568]
 layout_mode = 2
-text = "0"
-vertical_alignment = 1
+text = "0/0"
 label_settings = SubResource("LabelSettings_counter")
+vertical_alignment = 1
