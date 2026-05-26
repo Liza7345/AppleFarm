@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://crewf1nuveoh1"]
+[gd_scene format=3 uid="uid://blsm2tsrrgbdq"]
 
 [ext_resource type="Script" uid="uid://cgdf3fvwowjsw" path="res://Scenes/Components/sale_panel.gd" id="1_sp"]
 [ext_resource type="Texture2D" uid="uid://chxb46evwuna6" path="res://Assets/Game/деревья/fruit/Fruit+.png" id="2_fruit"]

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dam1rkpa0q4ek"]
+[gd_scene format=3 uid="uid://d3tcse5wikuok"]
 
 [ext_resource type="Script" uid="uid://dph03gu8hdhbr" path="res://Scenes/Components/apple.gd" id="1_lvlxw"]
 [ext_resource type="Texture2D" uid="uid://chxb46evwuna6" path="res://Assets/Game/деревья/fruit/Fruit+.png" id="1_rf5xg"]

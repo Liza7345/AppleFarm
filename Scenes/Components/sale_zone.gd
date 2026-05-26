@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var signal_bus: SignalBus = null
+@onready var signal_bus = SignalBus
 @onready var hint_bubble = $HintBubble
 
 var player_inside: bool = false
