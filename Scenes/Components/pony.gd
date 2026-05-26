@@ -120,7 +120,12 @@ func on_reached_tree():
 	print("🦄 Пони достигла дерева!")
 	face_tree()
 	# Корзина появляется с противоположной стороны дерева по X
-	var basket_pos = Vector2(2.0 * tree_center.x - current_point.x, current_point.y)
+	const MIN_BASKET_OFFSET_X = 20.0
+	var mirrored_x = 2.0 * tree_center.x - current_point.x
+	var offset_x = mirrored_x - tree_center.x
+	if abs(offset_x) < MIN_BASKET_OFFSET_X:
+		offset_x = MIN_BASKET_OFFSET_X * sign(offset_x) if offset_x != 0.0 else MIN_BASKET_OFFSET_X
+	var basket_pos = Vector2(tree_center.x + offset_x, current_point.y)
 	signal_bus.show_basket.emit(basket_pos)
 	hit_tree()
 

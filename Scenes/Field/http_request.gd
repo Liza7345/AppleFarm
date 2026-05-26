@@ -62,6 +62,8 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 				signal_bus.load_trees.emit(json.get("trees", []))
 				signal_bus.game_loaded.emit()
 				signal_bus.hide_start_panel.emit()
+				if json.coins >= json.goal:
+					signal_bus.game_ended.emit()
 			else:
 				signal_bus.show_start_panel.emit(json.goal)
 		else:

@@ -14,6 +14,8 @@ var selection_mode: bool = false
 var is_grown: bool = false
 var _is_regrowing: bool = false
 var _regrow_timers: Array[SceneTreeTimer] = []
+var _game_generation: int = 0
+var _regrowing_set: Dictionary = {}  # apple -> true, если для него уже запущен таймер
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,9 +35,11 @@ func _ready() -> void:
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 
 func _on_game_started(_goal: int) -> void:
+	_game_generation += 1
 	is_grown = false
 	_is_regrowing = false
 	_regrow_timers.clear()
+	_regrowing_set.clear()
 	area.monitoring = true
 	area.monitorable = true
 	animated_sprite.play("growing")
@@ -76,11 +80,13 @@ func _on_trees_loaded(trees: Array) -> void:
 		# Таймеры только для недостающих яблок (если все 5 на месте — не запускаем)
 		if apples_on_tree < apples.size():
 			_is_regrowing = true
+			var gen = _game_generation
 			for i in range(apples_on_tree, apples.size()):
 				var apple = apples[i]
+				_regrowing_set[apple] = true
 				var timer = get_tree().create_timer(randf_range(5.0, 35.0))
 				_regrow_timers.append(timer)
-				timer.timeout.connect(_regrow_apple.bind(apple))
+				timer.timeout.connect(_regrow_apple.bind(apple, gen))
 		return
 		
 func _on_selection_mode_entered():
@@ -130,7 +136,7 @@ func _process(_delta: float) -> void:
 func _on_click(viewport, event, shape_idx):
 	if not is_grown:
 		return
-		
+
 	if selection_mode and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		signal_bus.current_tree_selected.emit(physics_collision)
 		signal_bus.current_tree_selected_root.emit(root)
@@ -138,24 +144,31 @@ func _on_click(viewport, event, shape_idx):
 
 
 func _on_gather_apple() -> void:
-	if not is_grown:
-		return
 	call_deferred("_check_all_gathered")
 
 func _check_all_gathered() -> void:
-	if _is_regrowing:
+	if not is_grown:
 		return
+	var gen = _game_generation
 	for apple in apples:
-		if apple.rigid_body == null or apple.rigid_body.visible:
-			return
-	_is_regrowing = true
-	_regrow_timers.clear()
-	for apple in apples:
-		var timer = get_tree().create_timer(randf_range(5.0, 35.0))
-		_regrow_timers.append(timer)
-		timer.timeout.connect(_regrow_apple.bind(apple))
+		if apple.rigid_body == null:
+			continue
+		# Запускаем таймер только для яблок, которые собраны и у которых нет активного таймера
+		if not apple.rigid_body.visible and not _regrowing_set.has(apple):
+			_regrowing_set[apple] = true
+			_is_regrowing = true
+			var timer = get_tree().create_timer(randf_range(5.0, 35.0))
+			_regrow_timers.append(timer)
+			timer.timeout.connect(_regrow_apple.bind(apple, gen))
 
-func _regrow_apple(apple: AppleNode) -> void:
+func _regrow_apple(apple: AppleNode, generation: int) -> void:
+	_regrowing_set.erase(apple)
+	if generation != _game_generation:
+		_check_all_regrown()
+		return
+	if not is_grown:
+		_check_all_regrown()
+		return
 	apple.rigid_body.position = Vector2.ZERO
 	apple.rigid_body.freeze = true
 	apple.rigid_body.visible = true
@@ -163,9 +176,8 @@ func _regrow_apple(apple: AppleNode) -> void:
 	_check_all_regrown()
 
 func _check_all_regrown() -> void:
-	for apple in apples:
-		if not apple.rigid_body.visible:
-			return
+	if not _regrowing_set.is_empty():
+		return
 	_is_regrowing = false
 	_regrow_timers.clear()
 	area.monitoring = true

@@ -78,7 +78,7 @@ animations = [{
 size = Vector2(128, 152)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jlx0s"]
-size = Vector2(40, 40)
+size = Vector2(12, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mgjrp"]
 size = Vector2(128, 10)
@@ -107,7 +107,7 @@ collision_mask = 15
 freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=825983535]
-position = Vector2(4, 52)
+position = Vector2(1, 52)
 shape = SubResource("RectangleShape2D_jlx0s")
 
 [node name="Apple" parent="." unique_id=1285878442 instance=ExtResource("3_agspb")]

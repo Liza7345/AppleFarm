@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://hcgcys36s70p" path="res://Scenes/Components/Basket.tscn" id="6_u6v2t"]
 [ext_resource type="PackedScene" uid="uid://daqgubnggle1p" path="res://Scenes/Components/UI.tscn" id="7_oq6in"]
 [ext_resource type="Script" uid="uid://ct5ubl5vdn5xn" path="res://Scenes/Field/cursor_manager.gd" id="8_juqub"]
-[ext_resource type="PackedScene" uid="uid://crewf1nuveoh1" path="res://Scenes/Components/SalePanel.tscn" id="10_f2nxy"]
+[ext_resource type="PackedScene" uid="uid://blsm2tsrrgbdq" path="res://Scenes/Components/SalePanel.tscn" id="10_f2nxy"]
 [ext_resource type="PackedScene" uid="uid://bbslk13c1fac3" path="res://Scenes/Components/Larec.tscn" id="10_larec"]
 [ext_resource type="Resource" uid="uid://c1c433is7oh5m" path="res://game_settings.tres" id="11_0wtbw"]
 [ext_resource type="PackedScene" uid="uid://hhvi630cx1tv" path="res://Scenes/Components/GoalPanel.tscn" id="12_goal"]
@@ -16,8 +16,8 @@
 [ext_resource type="Script" uid="uid://dn8u8liyrapdv" path="res://Scenes/Field/http_request.gd" id="14_mvjyh"]
 
 [node name="Scene 1" type="Node2D" unique_id=145392554]
-position = Vector2(-5, 7)
 y_sort_enabled = true
+position = Vector2(-5, 7)
 
 [node name="Map" type="Node2D" parent="." unique_id=1310551120]
 
@@ -43,10 +43,10 @@ position = Vector2(974, 129)
 position = Vector2(718, 481)
 
 [node name="Tree4" parent="." unique_id=326906330 groups=["trees"] instance=ExtResource("3_8m18q")]
-position = Vector2(934, 297)
+position = Vector2(810, 281)
 
 [node name="Pony" parent="." unique_id=1759426126 instance=ExtResource("4_ck0p7")]
-position = Vector2(734, 345)
+position = Vector2(560, 439)
 
 [node name="Basket" parent="." unique_id=730857903 instance=ExtResource("6_u6v2t")]
 position = Vector2(702, 217)
@@ -63,9 +63,11 @@ position = Vector2(1014, 465)
 settings = ExtResource("11_0wtbw")
 
 [node name="GoalPanel" parent="." unique_id=1679454670 instance=ExtResource("12_goal")]
+layer = 10
 
 [node name="GameEndedScene" parent="." unique_id=1007077572 instance=ExtResource("13_vdjec")]
 visible = false
+z_index = 100
 offset_left = 557.0
 offset_top = 326.0
 offset_right = 557.0
