@@ -59,6 +59,7 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 				signal_bus.load_goal.emit(json.goal)
 				signal_bus.load_coins.emit(json.coins)
 				signal_bus.load_apples_collected.emit(json.apples_collected)
+				signal_bus.load_trees.emit(json.get("trees", []))
 				signal_bus.game_loaded.emit()
 				signal_bus.hide_start_panel.emit()
 			else:

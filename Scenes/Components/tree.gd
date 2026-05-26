@@ -47,10 +47,41 @@ func _on_game_started(_goal: int) -> void:
 			apple.rigid_body.freeze = true
 			apple.rigid_body.visible = true
 		
-func _on_trees_loaded(trees):
-	animated_sprite.play("growing")
-	for apple in apples:
-		apple.set_signal_bus(signal_bus)
+func _on_trees_loaded(trees: Array) -> void:
+	for tree_data in trees:
+		if tree_data.get("tree_name", "") != name:
+			continue
+
+		is_grown = true
+		_is_regrowing = false
+		_regrow_timers.clear()
+		animated_sprite.stop()
+		animated_sprite.play("idle")
+
+		var apples_on_tree: int = tree_data.get("apples_on_tree", 0)
+
+		for i in range(apples.size()):
+			var apple = apples[i]
+			if i < apples_on_tree:
+				apple.visible = true
+				if apple.rigid_body:
+					apple.rigid_body.position = Vector2.ZERO
+					apple.rigid_body.freeze = true
+					apple.rigid_body.visible = true
+			else:
+				apple.visible = false
+				if apple.rigid_body:
+					apple.rigid_body.visible = false
+
+		# Таймеры только для недостающих яблок (если все 5 на месте — не запускаем)
+		if apples_on_tree < apples.size():
+			_is_regrowing = true
+			for i in range(apples_on_tree, apples.size()):
+				var apple = apples[i]
+				var timer = get_tree().create_timer(randf_range(5.0, 35.0))
+				_regrow_timers.append(timer)
+				timer.timeout.connect(_regrow_apple.bind(apple))
+		return
 		
 func _on_selection_mode_entered():
 	selection_mode = true
@@ -128,6 +159,7 @@ func _regrow_apple(apple: AppleNode) -> void:
 	apple.rigid_body.position = Vector2.ZERO
 	apple.rigid_body.freeze = true
 	apple.rigid_body.visible = true
+	apple.visible = true
 	_check_all_regrown()
 
 func _check_all_regrown() -> void:
